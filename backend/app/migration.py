@@ -72,7 +72,7 @@ def create_tables():
     try:
 
         # connect to the PostgreSQL server
-        conn = psycopg2.connect(host="localhost", database="assignment", user="root", password="password", port="5432")
+        conn = psycopg2.connect(host="postgres", database="assignment", user="root", password="password", port="5432", sslmode="disable")
         
         # create table one by one
         for migration in migrations:
