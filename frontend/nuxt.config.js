@@ -1,10 +1,10 @@
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  mode: 'spa',
-    // ssr: true,
+  mode: "spa",
+  // ssr: true,
   target: "server",
   server: {
-      host: "0.0.0.0",
+    host: "0.0.0.0",
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -36,7 +36,9 @@ export default {
   },
   proxy: {
     "/api": {
-      target: "http://localhost:8000",
+      target:
+        process.env.NODE_ENV === "production" ? "" : "http://localhost:8000",
+      pathRewrite: { "^/api": "/api" },
     },
   },
 

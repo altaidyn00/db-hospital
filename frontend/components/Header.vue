@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="lg" class="header-custom">
-      <b-navbar-brand href="/" :style="{ color: 'white' }"
+      <b-navbar-brand @click="$router.push('/')" :style="{ color: 'white' }"
         >Assignment 2</b-navbar-brand
       >
 
@@ -10,19 +10,17 @@
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown class="CRUD-dropdown" text="CRUD" right>
-            <b-dropdown-item href="/disease-types"
-              >Disease types</b-dropdown-item
-            >
-            <b-dropdown-item href="/countries">Countries</b-dropdown-item>
-            <b-dropdown-item href="/diseases">Diseases</b-dropdown-item>
-            <b-dropdown-item href="/discovers">Discovers</b-dropdown-item>
-            <b-dropdown-item href="/users">Users</b-dropdown-item>
-            <b-dropdown-item href="/public-servants"
+            <b-dropdown-item @click="$router.push('/disease-types')">Disease types</b-dropdown-item>
+            <b-dropdown-item @click="$router.push('/countries')">Countries</b-dropdown-item>
+            <b-dropdown-item @click="$router.push('/diseases')">Diseases</b-dropdown-item>
+            <b-dropdown-item @click="$router.push('/discovers')">Discovers</b-dropdown-item>
+            <b-dropdown-item @click="$router.push('/users')">Users</b-dropdown-item>
+            <b-dropdown-item @click="$router.push('/public-servants')"
               >Public servants</b-dropdown-item
             >
-            <b-dropdown-item href="/doctors">Doctors</b-dropdown-item>
-            <b-dropdown-item href="/specializes">Specializes</b-dropdown-item>
-            <b-dropdown-item href="/records">Records</b-dropdown-item>
+            <b-dropdown-item @click="$router.push('/doctors')">Doctors</b-dropdown-item>
+            <b-dropdown-item @click="$router.push('/specializes')">Specializes</b-dropdown-item>
+            <b-dropdown-item @click="$router.push('/records')">Records</b-dropdown-item>
           </b-nav-item-dropdown></b-navbar-nav
         >
       </b-collapse>

@@ -1,23 +1,26 @@
 version: "3.9"
 services:
   postgres:
+    container_name: postgres
     image: postgres:13.3-alpine
+    restart: always
     environment:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=assignment
     ports:
       - "5432:5432"
+    networks:
+      - services-network
 
   api:
     container_name: api
+    restart: always
     build:
       context: backend
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
-    volumes:
-      - ./data:/var/lib/postgresql/data
     depends_on:
       - postgres
     networks:
