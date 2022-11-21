@@ -128,7 +128,11 @@ export default {
       await this.$store.dispatch("crud/update_discovery", {
         disease_code: this.disease_code,
         cname: this.cname,
-        payload: this.payload,
+        payload: {
+          disease_code: this.disease_code,
+          cname: this.cname,
+          first_enc_date: this.first_enc_date,
+        },
       });
       await this.$store.dispatch("crud/get_discoveries");
       this.$bvModal.hide("bv-modal-update");

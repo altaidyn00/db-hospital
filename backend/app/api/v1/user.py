@@ -75,6 +75,10 @@ def update_user(
             params={"name": user.name, "surname": user.surname, "email": email, "phone": user.phone, "salary": user.salary, "cname": user.cname},
         ).fetchone()
 
+        db.commit()
+
+        print(user)
+
         return {"user": user, "message": "User updated successfully"}
     except Exception as e:
         db.rollback()

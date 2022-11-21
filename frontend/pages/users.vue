@@ -188,7 +188,7 @@ export default {
           surname: this.surname,
           email: this.email,
           phone: this.phone,
-          salary: this.salary,
+          salary: +this.salary,
           cname: this.cname,
         },
       });
