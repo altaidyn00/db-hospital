@@ -16,8 +16,12 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
+    volumes:
+      - ./data:/var/lib/postgresql/data
     depends_on:
       - postgres
+    networks:
+      - services-network
 
   frontend:
     container_name: frontend
@@ -28,6 +32,8 @@ services:
       - "3000:3000"
     depends_on:
       - api
+    networks:
+      - services-network
 
   nginx:
     container_name: nginx
@@ -38,7 +44,9 @@ services:
       - "80:80"
     depends_on:
       - frontend
+    networks:
+      - services-network
 
 networks:
-  default:
-    name: services-network
+  services-network:
+    driver: bridge
