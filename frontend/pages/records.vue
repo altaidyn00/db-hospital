@@ -39,21 +39,6 @@
       <b-modal id="bv-modal-update" hide-footer>
         <div>Update record</div>
         <b-form-input
-          v-model="email"
-          class="mb-2 mt-2"
-          placeholder="Enter email"
-        ></b-form-input>
-        <b-form-input
-          v-model="disease_code"
-          class="mb-2"
-          placeholder="Enter disease code"
-        ></b-form-input>
-        <b-form-input
-          v-model="cname"
-          class="mb-2"
-          placeholder="Enter country"
-        ></b-form-input>
-        <b-form-input
           v-model="total_deaths"
           class="mb-2"
           placeholder="Enter total deaths"
@@ -69,7 +54,7 @@
       class="custom-border"
       table-class="table table-centered w-100"
       thead-tr-class="bg-light"
-      tbody-tr-class="hover"
+      tbody-tr-class="bg-light"
       :items="records.records"
       :fields="fields"
       :bordered="true"
@@ -191,17 +176,28 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .large-font {
   font-size: 50px;
 }
 
-.action-button {
-  color: white;
-}
-
 .action-button:hover {
   cursor: pointer;
-  color: blue;
+  color: #35ca62;
+}
+
+.btn {
+  background-color: black;
+  border-color: black;
+}
+
+.btn:hover {
+  background-color: #35ca62;
+  border-color: #35ca62;
+}
+
+.custom-border .table .rowgroup .hover {
+  background-color: white !important;
+  background: white !important;
 }
 </style>

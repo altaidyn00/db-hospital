@@ -1,8 +1,6 @@
 # deps file
 from app.engine import SessionLocal
 from typing import Generator
-from fastapi import Depends
-from sqlalchemy.orm import Session
 
 def get_db() -> Generator:
     try:
@@ -10,7 +8,3 @@ def get_db() -> Generator:
         yield db
     finally:
         db.close()
-
-
-
-

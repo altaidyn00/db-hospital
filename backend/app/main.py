@@ -1,7 +1,6 @@
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
 from app.api import api
-from app.engine import engine
 from app.migration import create_tables
 
 app = FastAPI()

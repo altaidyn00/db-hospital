@@ -31,7 +31,7 @@
       class="custom-border"
       table-class="table table-centered w-100"
       thead-tr-class="bg-light"
-      tbody-tr-class="hover"
+      tbody-tr-class="bg-light"
       :items="diseaseTypes.disease_types"
       :fields="fields"
       :bordered="true"
@@ -115,17 +115,28 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .large-font {
   font-size: 50px;
 }
 
-.action-button {
-  color: white;
-}
-
 .action-button:hover {
   cursor: pointer;
-  color: blue;
+  color: #35ca62;
+}
+
+.btn {
+  background-color: black;
+  border-color: black;
+}
+
+.btn:hover {
+  background-color: #35ca62;
+  border-color: #35ca62;
+}
+
+.custom-border .table .rowgroup .hover {
+  background-color: white !important;
+  background: white !important;
 }
 </style>

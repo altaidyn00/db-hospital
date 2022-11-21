@@ -12,6 +12,3 @@ router.include_router(discover.router, prefix="/v1", tags=["discovers"])
 router.include_router(public_servant.router, prefix="/v1", tags=["public_servants"])
 router.include_router(record.router, prefix="/v1", tags=["records"])
 router.include_router(specialize.router, prefix="/v1", tags=["specializes"])
-
-
-

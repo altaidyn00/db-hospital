@@ -4,9 +4,9 @@
     <div class="particles-background d-flex flex-column">
       <Nuxt class="nuxt-page" />
       <vue-particles
-        color="#ffffff"
+        color="#44EE77"
         :particleOpacity="0.7"
-        linesColor="#ffffff"
+        linesColor="#44EE77"
         :particlesNumber="50"
         shapeType="circle"
         :particleSize="7"
@@ -41,7 +41,7 @@ export default {};
 .particles-background #particles-js {
   height: 100%;
   width: 100%;
-  background-color: #17a2b8 !important;
+  background-color: #ca8167 !important;
   position: absolute;
 }
 </style>

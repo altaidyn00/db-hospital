@@ -1,20 +1,11 @@
-from typing import Any, List
-
+from typing import Any
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-
 from app.api import deps
-
 from typing import Optional
-
 from pydantic import BaseModel
 
 router = APIRouter()
-# email VARCHAR(60) NOT NULL,
-#     cname VARCHAR(50) NOT NULL,
-#     disease_code VARCHAR(50) NOT NULL,
-#     total_deaths INTEGER NOT NULL,
-#     total_patients INTEGER NOT NULL,
 class RecordBase(BaseModel):
     email: Optional[str] = None
     disease_code: Optional[str] = None

@@ -55,11 +55,6 @@
           placeholder="Enter surname"
         ></b-form-input>
         <b-form-input
-          v-model="email"
-          class="mb-2"
-          placeholder="Enter email"
-        ></b-form-input>
-        <b-form-input
           v-model="phone"
           class="mb-2"
           placeholder="Enter phone"
@@ -81,7 +76,7 @@
       class="custom-border"
       table-class="table table-centered w-100"
       thead-tr-class="bg-light"
-      tbody-tr-class="hover"
+      tbody-tr-class="bg-light"
       :items="users.users"
       :fields="fields"
       :bordered="true"
@@ -97,14 +92,14 @@
       <template #cell(email)="data">
         {{ data.item.email }}
       </template>
+      <template #cell(cname)="data">
+        {{ data.item.cname }}
+      </template>
       <template #cell(phone)="data">
         {{ data.item.phone }}
       </template>
       <template #cell(salary)="data">
         {{ data.item.salary }}
-      </template>
-      <template #cell(cname)="data">
-        {{ data.item.cname }}
       </template>
       <template #cell(action1)="data">
         <div class="font-weight-bold action-button" @click="set(data.item)">
@@ -121,10 +116,10 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters } from "vuex";
 export default {
   name: "Users",
-  async asyncData({ store, params }) {
+  async asyncData({ store }) {
     await store.dispatch("crud/get_users");
   },
   data() {
@@ -139,6 +134,7 @@ export default {
         { key: "name", label: "Name" },
         { key: "surname", label: "Surname" },
         { key: "email", label: "Email" },
+        { key: "cname", label: "Country" },
         { key: "phone", label: "Phone" },
         { key: "salary", label: "Salary" },
         { key: "salary", label: "Country" },
@@ -204,17 +200,28 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .large-font {
   font-size: 50px;
 }
 
-.action-button {
-  color: white;
-}
-
 .action-button:hover {
   cursor: pointer;
-  color: blue;
+  color: #35ca62;
+}
+
+.btn {
+  background-color: black;
+  border-color: black;
+}
+
+.btn:hover {
+  background-color: #35ca62;
+  border-color: #35ca62;
+}
+
+.custom-border .table .rowgroup .hover {
+  background-color: white !important;
+  background: white !important;
 }
 </style>

@@ -67,9 +67,6 @@ migrations = [
 );""",
 ]
 
-
-  
-  
 def create_tables():
     conn = None
     try:
